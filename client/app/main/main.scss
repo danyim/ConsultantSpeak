@@ -21,10 +21,15 @@
         font-weight: 300;
         line-height: 1;
         letter-spacing: -1px;
-        margin-bottom: 14px;
-
         .word {
             font-weight: 900;
+        }
+        .pronounciation {
+            font-size: 30px;
+            display: none;
+        }
+        .comma {
+            font-size: 30px;
         }
         em {
             font-size: 35px;
@@ -34,7 +39,8 @@
     .body {
         font-family: 'Cardo', serif;
         font-size: 20px;
-        p {
+        margin: 18px 0;
+        .definition {
             hyphens: auto;
         }
         .usage {
@@ -48,6 +54,7 @@
             }
             .example {
                 font-style: italic;
+                font-size: 20px;
                 strong {
                     font-weight: bold;
                 }

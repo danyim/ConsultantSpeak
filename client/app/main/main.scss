@@ -1,0 +1,65 @@
+.thing-form {
+    margin: 20px 0;
+}
+
+#banner {
+    font-weight: 300;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: left;
+    position: relative;
+    padding: 30px 15px;
+    color: #000;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+
+    .container {
+        width: 450px;
+    }
+    .head {
+        font-family: 'Merriweather', serif;
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -1px;
+        margin-bottom: 14px;
+
+        .word {
+            font-weight: 900;
+        }
+        em {
+            font-size: 35px;
+            font-weight: 700;
+        }
+    }
+    .body {
+        font-family: 'Cardo', serif;
+        font-size: 20px;
+        p {
+            hyphens: auto;
+        }
+        .usage {
+            .title {
+                font-family: 'Merriweather', serif;
+                font-weight: 300;
+                letter-spacing: -1px;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 18px;
+            }
+            .example {
+                font-style: italic;
+                strong {
+                    font-weight: bold;
+                }
+            }
+        }
+
+    }
+}
+
+
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 100px;
+}

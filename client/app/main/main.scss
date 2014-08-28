@@ -39,18 +39,17 @@
     .body {
         font-family: 'Cardo', serif;
         font-size: 20px;
-        margin: 18px 0;
         .definition {
             hyphens: auto;
+            margin: 18px 0 25px;
         }
         .usage {
             .title {
                 font-family: 'Merriweather', serif;
                 font-weight: 300;
-                letter-spacing: -1px;
                 text-transform: uppercase;
                 font-weight: bold;
-                font-size: 18px;
+                font-size: 17px;
             }
             .example {
                 font-style: italic;
@@ -66,7 +65,8 @@
 
 
 .footer {
+    font-style: italic;
     text-align: center;
     padding: 30px 0;
-    margin-top: 100px;
+    margin-top: 60px;
 }

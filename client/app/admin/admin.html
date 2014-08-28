@@ -1,0 +1,58 @@
+
+<div id="banner">
+  <div class="container" ng-repeat="jargon in awesomeThings">
+    <div class="head">
+      <span class="word">{{jargon.word}}</span><span class="pronounciation"> [b'oil 'the o'sean]</span><span class="comma">,</span><em> {{jargon.type}}.</em>
+    </div>
+    <div class="body">
+      <!--<ol>
+        <li class="definition">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis ligula vitae mi iaculis, lacinia aliquam ex vehicula. Donec in diam mattis, viverra tellus quis, pulvinar est.
+        </li>
+      </ol>-->
+      <p class="definition">
+        {{jargon.defn}}
+      </p>
+      <div class="usage">
+        <span class="title">Usage</span><br />
+        <span class="example">{{jargon.usage}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Words:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="jargon in awesomeThings">
+        <li>
+          <a href="#/admin" tooltip="{{jargon.info}}">
+            {{jargon.word}}{{', ' + jargon.type + '.'}}<button type="button" class="close" ng-click="deleteThing(jargon)">&times;</button>
+            <br />
+            <em>{{jargon.defn}}</em>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <form class="jargon-form">
+    <label>Add a new consulting jargon</label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Word or phrase" ng-model="word">
+      <input type="text" class="form-control" placeholder="Word type (v, n, adj, adv)" ng-model="type">
+      <input type="text" class="form-control" placeholder="Definition" ng-model="defn">
+      <input type="text" class="form-control" placeholder="Usage example" ng-model="usage">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
+      </span>
+    </p>
+  </form>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>Brought to you by <a href="http://nubs.org/danyim">@danyim</a></p>
+  </div>
+</footer>

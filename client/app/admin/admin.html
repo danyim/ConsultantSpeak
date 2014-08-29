@@ -1,24 +1,5 @@
-
-<div class="jargon">
-  <div class="container jargonCard" ng-repeat="j in jargon">
-    <div class="head">
-      <span class="word">{{j.word}}</span><span class="pronounciation"> [b'oil 'the o'sean]</span><span class="comma">,</span><em> {{j.type}}.</em>
-    </div>
-    <div class="body">
-      <p class="definition">
-        {{j.defn}}
-      </p>
-      <div class="usage">
-        <span class="title">Usage</span><br />
-        <span class="example">{{j.usage}}</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr />
 <div class="container">
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-lg-12">
     <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6">
         <li>
@@ -35,22 +16,43 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
 
-  <form class="jargon-form">
-    <label>Add new consulting jargon</label>
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Word or phrase" ng-model="selectedJargon.word">
-      <input type="text" class="form-control" placeholder="Word type (v, n, adj, adv)" ng-model="selectedJargon.type">
-      <input type="text" class="form-control" placeholder="Definition" ng-model="selectedJargon.defn">
-      <input type="text" class="form-control" placeholder="Usage example" ng-model="selectedJargon.usage">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-show="selectedJargon == j" ng-click="addJargon()">Add Jargon</button>
-        <button type="submit" class="btn btn-info" ng-show="selectedJargon != j" ng-click="addJargon()">Update Jargon</button>
-        <button type="submit" class="btn btn-danger" ng-show="selectedJargon != j" ng-click="deleteJargon(selectedJargon)">Delete</button>
-      </span>
-    </p>
-  </form>
+  <div class="col-lg-4 center-block">
+    <form class="">
+      <label>Add new consulting jargon</label>
+      <p class="input-group">
+        <input type="text" class="form-control" placeholder="Word or phrase" ng-model="selectedJargon.word">
+        <input type="text" class="form-control" placeholder="Word type (v, n, adj, adv)" ng-model="selectedJargon.type">
+        <input type="text" class="form-control" placeholder="Definition" ng-model="selectedJargon.defn">
+        <input type="text" class="form-control" placeholder="Usage example" ng-model="selectedJargon.usage">
+      </p>
+      <p class="input-group">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" ng-show="!hasSelection" ng-click="addJargon()">Add Jargon</button>
+          <button type="submit" class="btn btn-info" ng-show="hasSelection" ng-click="addJargon()">Update Jargon</button>
+          <button type="submit" class="btn btn-danger" ng-show="hasSelection" ng-click="deleteJargon(selectedJargon)">Delete</button>
+          <button type="submit" class="btn btn-warning" ng-show="hasSelection" ng-click="newJargon()">Cancel</button>
+        </span>
+      </p>
+    </form>
+  </div>
+</div>
+<div class="jargon">
+  <div class="container jargonCard" ng-click="selectJargon(j)" ng-dblclick="deleteJargon(j)" ng-repeat="j in jargon">
+    <div class="head">
+      <span class="word">{{j.word}}</span><span class="pronounciation"> [b'oil 'the o'sean]</span><span class="comma">,</span><em> {{j.type}}.</em>
+    </div>
+    <div class="body">
+      <p class="definition">
+        {{j.defn}}
+      </p>
+      <div class="usage">
+        <span class="title">Usage</span><br />
+        <span class="example">{{j.usage}}</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <footer class="footer">

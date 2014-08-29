@@ -7,7 +7,8 @@ var JargonSchema = new Schema({
   word: String,
   defn: String,
   type: String,
-  usage: String
+  usage: String,
+  active: Boolean
 });
 
 module.exports = mongoose.model('Jargon', JargonSchema);

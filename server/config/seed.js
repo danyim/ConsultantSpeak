@@ -12,7 +12,13 @@ Jargon.find({}).remove(function() {
   Jargon.create({
     word : 'boil the ocean',
     type : 'v',
-    defn : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis ligula vitae mi iaculis, lacinia aliquam ex vehicula. Donec in diam mattis, viverra tellus quis, pulvinar est.',
+    defn : 'A seemingly impossible task.',
     usage : 'What\'s the estimate? One week, one month, or are they asking us to boil the ocean?'
+  },
+  {
+    word : 'sample',
+    type : 'n',
+    defn : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis ligula vitae mi iaculis, lacinia aliquam ex vehicula. Donec in diam mattis, viverra tellus quis, pulvinar est.',
+    usage : 'Sample sentence using the word in context.'
   });
 });

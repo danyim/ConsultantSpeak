@@ -2,21 +2,15 @@
 
 angular.module 'consultingMadnessApp'
 .controller 'MainCtrl', ($scope, $http, socket) ->
-  $scope.awesomeThings = []
+  $scope.jargon = []
 
-  $http.get('/api/things').success (awesomeThings) ->
-    $scope.awesomeThings = awesomeThings
-    socket.syncUpdates 'thing', $scope.awesomeThings
+  $http.get('/api/jargon').success (jargon) ->
+    rand = Math.floor((Math.random() * jargon.length - 1) + 1)
 
-  $scope.addThing = ->
-    return if $scope.newThing is ''
-    $http.post '/api/things',
-      name: $scope.newThing
+    if jargon.length > 0
+      $scope.jargon = [jargon[rand]]
 
-    $scope.newThing = ''
-
-  $scope.deleteThing = (thing) ->
-    $http.delete '/api/things/' + thing._id
+    socket.syncUpdates 'jargon', $scope.jargon
 
   $scope.$on '$destroy', ->
-    socket.unsyncUpdates 'thing'
+    socket.unsyncUpdates 'jargon'

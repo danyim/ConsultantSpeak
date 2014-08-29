@@ -1,15 +1,32 @@
 
-<div id="banner">
+<div class="jargon">
+  <div class="container jargon" ng-repeat="j in jargon">
+    <div class="head">
+      <span class="word">{{j.word}}</span><span class="pronounciation"> [b'oil 'the o'sean]</span><span class="comma">,</span><em> {{j.type}}.</em>
+    </div>
+    <div class="body">
+      <p class="definition">
+        {{j.defn}}
+      </p>
+      <div class="usage">
+        <span class="title">Usage</span><br />
+        <span class="example">{{j.usage}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div id="jargon">
   <div class="container">
     <div class="head md-col-3">
       <span class="word">boil the ocean</span><span class="pronounciation"> [b'oil 'the o'sean]</span><span class="comma">,</span><em> v.</em>
     </div>
     <div class="body">
-      <!--<ol>
+      <ol>
         <li class="definition">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis ligula vitae mi iaculis, lacinia aliquam ex vehicula. Donec in diam mattis, viverra tellus quis, pulvinar est.
         </li>
-      </ol>-->
+      </ol>
       <p class="definition">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis ligula vitae mi iaculis, lacinia aliquam ex vehicula. Donec in diam mattis, viverra tellus quis, pulvinar est.
       </p>
@@ -20,9 +37,9 @@
     </div>
   </div>
 </div>
-
+ -->
 <footer class="footer">
   <div class="container">
-      <p>product of<a href="http://nubs.org/danyim">danyim</a></p>
+      <p>A product by <a href="http://nubs.org/danyim">danyim</a> | <a href="#/admin">admin</a></p>
   </div>
 </footer>

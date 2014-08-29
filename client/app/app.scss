@@ -15,6 +15,75 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 
+.footer {
+    font-style: italic;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+.jargon {
+    font-weight: 300;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: left;
+    position: relative;
+    padding: 30px 15px;
+    color: #000;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+
+    .container {
+        width: 450px;
+    }
+    .head {
+        font-family: 'Merriweather', serif;
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -1px;
+        .word {
+            font-weight: 900;
+        }
+        .pronounciation {
+            font-size: 30px;
+            display: none;
+        }
+        .comma {
+            font-size: 30px;
+        }
+        em {
+            font-size: 35px;
+            font-weight: 700;
+        }
+    }
+    .body {
+        font-family: 'Cardo', serif;
+        font-size: 20px;
+        .definition {
+            hyphens: auto;
+            margin: 18px 0 25px;
+        }
+        .usage {
+            .title {
+                font-family: 'Merriweather', serif;
+                font-weight: 300;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 17px;
+            }
+            .example {
+                font-style: italic;
+                font-size: 20px;
+                strong {
+                    font-weight: bold;
+                }
+            }
+        }
+
+    }
+}
+
+
 // Component styles are injected through grunt
 // injector
 @import 'admin/admin.scss';

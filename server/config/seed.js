@@ -27,7 +27,7 @@ Jargon.find({}).remove(function() {
     word : 'CYA',
     type : 'n',
     defn : 'Cover Your Ass',
-    usage : 'The Independent Decision Record document is primarily used as a CYA.',
+    usage : 'For every project, we document every decision made by the stakeholders primarily as a CYA for the future.',
     active: true
   },
   {

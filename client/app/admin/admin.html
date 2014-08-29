@@ -18,23 +18,27 @@
     </div>
   </div> -->
 
-  <div class="col-lg-4 center-block">
-    <form class="">
+  <div class="col-lg-6 center-block">
+    <form role="form">
       <label>Add new consulting jargon</label>
-      <p class="input-group">
-        <input type="text" class="form-control" placeholder="Word or phrase" ng-model="selectedJargon.word">
-        <input type="text" class="form-control" placeholder="Word type (v, n, adj, adv)" ng-model="selectedJargon.type">
-        <input type="text" class="form-control" placeholder="Definition" ng-model="selectedJargon.defn">
-        <input type="text" class="form-control" placeholder="Usage example" ng-model="selectedJargon.usage">
-      </p>
-      <p class="input-group">
-        <span class="input-group-btn">
-          <button type="submit" class="btn btn-primary" ng-show="!hasSelection" ng-click="addJargon()">Add Jargon</button>
-          <button type="submit" class="btn btn-info" ng-show="hasSelection" ng-click="addJargon()">Update Jargon</button>
-          <button type="submit" class="btn btn-danger" ng-show="hasSelection" ng-click="deleteJargon(selectedJargon)">Delete</button>
-          <button type="submit" class="btn btn-warning" ng-show="hasSelection" ng-click="newJargon()">Cancel</button>
-        </span>
-      </p>
+      <input type="text" class="form-control" placeholder="Word or phrase" ng-model="selectedJargon.word">
+      <div class="input-group">
+        <div class="input-group-addon">language</div>
+        <select class="form-control" placeholder="Word type (v, n, adj, adv)" ng-model="selectedJargon.type">
+          <option value="v" selected="selected">verb</option>
+          <option value="n">noun</option>
+          <option value="adj">adjective</option>
+          <option value="adv">adverb</option>>
+        </select>
+      </div>
+      <textarea class="form-control" rows="3" placeholder="Definition" ng-model="selectedJargon.defn">></textarea>
+      <input type="text" class="form-control" placeholder="Usage example" ng-model="selectedJargon.usage">
+
+      <button type="submit" class="btn btn-primary" ng-show="!hasSelection" ng-click="addJargon()">Add Jargon</button>
+      <button type="submit" class="btn btn-info" ng-show="hasSelection" ng-click="addJargon()">Update Jargon</button>
+      <button type="submit" class="btn btn-danger" ng-show="hasSelection" ng-click="deleteJargon(selectedJargon)">Delete</button>
+      <button type="submit" class="btn btn-warning" ng-show="hasSelection" ng-click="newJargon()">Cancel</button>
+
     </form>
   </div>
 </div>
@@ -54,9 +58,3 @@
     </div>
   </div>
 </div>
-
-<footer class="footer">
-  <div class="container">
-      <p>Brought to you by <a href="http://nubs.org/danyim">@danyim</a></p>
-  </div>
-</footer>

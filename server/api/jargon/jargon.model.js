@@ -8,7 +8,11 @@ var JargonSchema = new Schema({
   defn: String,
   type: String,
   usage: String,
-  active: Boolean
+  active: Boolean,
+  meta: {
+    votes: { type: Number, default: 0 },
+    favs: { type: Number, default: 0 }
+  }
 });
 
 module.exports = mongoose.model('Jargon', JargonSchema);

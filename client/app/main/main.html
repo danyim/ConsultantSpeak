@@ -12,6 +12,12 @@
         <span class="title">Usage</span><br />
         <span class="example">{{jargon.usage}}</span>
       </div>
+      <div class="usage">
+        <span class="title">Score</span><br />
+        <i class="fa fa-arrow-up" ng-click="addScore(jargon)"></i>
+        <i class="fa fa-arrow-down" ng-click="subScore(jargon)"></i>
+        <span class="example">{{jargon.meta.votes}}</span>
+      </div>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'consultingMadnessApp'
+angular.module 'consultantSpeakApp'
 .controller 'MainCtrl', ($scope, $http, socket) ->
   $scope.jargonList = []
 

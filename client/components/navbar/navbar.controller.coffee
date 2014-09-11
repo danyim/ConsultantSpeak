@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'consultingMadnessApp'
+angular.module 'consultantSpeakApp'
 .controller 'NavbarCtrl', ($scope, $location) ->
   $scope.menu = [
     title: 'Home'

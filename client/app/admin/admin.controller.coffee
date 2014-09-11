@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'consultingMadnessApp'
+angular.module 'consultantSpeakApp'
 .controller 'AdminCtrl', ($scope, $http, socket) ->
   $scope.jargon = []
   $scope.selectedJargon = null

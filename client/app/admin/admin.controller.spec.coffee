@@ -3,7 +3,7 @@
 describe 'Controller: AdminCtrl', ->
 
   # load the controller's module
-  beforeEach module 'consultingMadnessApp'
+  beforeEach module 'consultantSpeakApp'
   beforeEach module 'socketMock'
 
   AdminCtrl = undefined

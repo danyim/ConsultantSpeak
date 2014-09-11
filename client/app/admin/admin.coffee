@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'consultingMadnessApp'
+angular.module 'consultantSpeakApp'
 .config ($stateProvider) ->
   $stateProvider
   .state 'admin',

@@ -1,16 +1,16 @@
 
 <div class="jargon center-block">
-  <div class="container jargon" ng-repeat="j in jargon">
+  <div class="container jargon">
     <div class="head">
-      <span class="word">{{j.word}}</span><span class="pronounciation"> [b'oil 'the o'sean]</span><span class="comma">,</span><em> {{j.type}}.</em>
+      <span class="word">{{jargon.word}}</span><span class="pronounciation"> [b'oil 'the o'sean]</span><span class="comma">,</span><em> {{jargon.type}}.</em>
     </div>
     <div class="body">
       <p class="definition">
-        {{j.defn}}
+        {{jargon.defn}}
       </p>
       <div class="usage">
         <span class="title">Usage</span><br />
-        <span class="example">{{j.usage}}</span>
+        <span class="example">{{jargon.usage}}</span>
       </div>
     </div>
   </div>

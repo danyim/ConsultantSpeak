@@ -20,7 +20,7 @@
 
   <div class="col-lg-6 center-block">
     <form role="form">
-      <label>Add new consulting jargon</label>
+      <h2>Add new consulting jargon</h2>
       <input type="text" class="form-control" placeholder="Word or phrase" ng-model="selectedJargon.word">
       <div class="input-group">
         <div class="input-group-addon">language</div>
@@ -42,6 +42,19 @@
     </form>
   </div>
 </div>
+
+<div>
+  <dl class="dl-horizontal" ng-click="selectJargon(j)" ng-dblclick="deleteJargon(j)" ng-repeat="j in jargon">
+    <dt>{{j.word}}, <em>{{j.type}}</em>.</dt>
+    <dd>
+       {{j.defn}}
+       <p>
+        <em>{{j.usage}}</em>
+       </p>
+    </dd>
+  </dl>
+</div>
+
 <div class="jargon">
   <div class="container jargonCard" ng-click="selectJargon(j)" ng-dblclick="deleteJargon(j)" ng-repeat="j in jargon">
     <div class="head">

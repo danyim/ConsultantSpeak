@@ -20,15 +20,12 @@ angular.module 'consultantSpeakApp'
     $scope.hasSelection = true
 
   $scope.addJargon = ->
-    console.log($scope.selectedJargon)
     return if !$scope.selectedJargon or $scope.selectedJargon.word is ''
 
-    # TODO: Updates on existng words are not working. Need to modify the actual object in the $scope.jargon
-    # array instead of manually writing out all of the contents
     if $scope.hasSelection
+      console.log($scope.selectedJargon)
       # Updating existing row
-      $http.put '/api/jargon',
-        id: $scope.selectedJargon._id
+      $http.put '/api/jargon/' + $scope.selectedJargon._id,
         word: $scope.selectedJargon.word
         type: $scope.selectedJargon.type
         defn: $scope.selectedJargon.defn

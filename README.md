@@ -14,4 +14,5 @@ This is a fun little project that demonstrates how `yo angular-fullstack` (with 
 - Run `yo angular-fullstack:openshift` to create and deploy the application to your OpenShift account
 - After changes, run `grunt build` then `grunt buildcontrol:openshift` to deploy
 
-
+## Other Links ##
+- [https://github.com/DaftMonk/generator-angular-fullstack#openshift](https://github.com/DaftMonk/generator-angular-fullstack#openshift)

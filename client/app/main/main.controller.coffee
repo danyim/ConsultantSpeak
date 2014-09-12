@@ -10,7 +10,7 @@ angular.module 'consultantSpeakApp'
 
     # Filter out inactive words
     filteredJargonList = $scope.jargonList.filter((e) ->
-      console.log(e.word, e.active)
+      console.log(e.word, e.meta.votes, e.active)
       return e.active
     )
     # Find a random value
@@ -20,10 +20,14 @@ angular.module 'consultantSpeakApp'
       $scope.jargon = filteredJargonList[rand]
 
   $scope.addScore = (jargon) ->
-    $scope.jargonList[0].meta.votes++
+    $http.put '/api/jargon/' + jargon._id,
+        meta:
+          votes: ++jargon.meta.votes
 
   $scope.subScore = (jargon) ->
-    $scope.jargonList[0].meta.votes--
+    $http.put '/api/jargon/' + jargon._id,
+        meta:
+          votes: --jargon.meta.votes
 
   $scope.$on '$destroy', ->
     socket.unsyncUpdates 'jargon'

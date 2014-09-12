@@ -5,7 +5,7 @@ This is a fun little project that demonstrates how `yo angular-fullstack` (with 
   **OpenShift:** [http://cspeak-danyim.rhcloud.com/](http://cspeak-danyim.rhcloud.com/)
 
 ## Getting Started ##
-- Install MongoDB
+- Install MongoDBan
 - `npm install && bower install`
 - `grunt serve`
 

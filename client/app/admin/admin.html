@@ -90,20 +90,6 @@
   </div>
 </div>
 
-
-
-<div>
-  <dl class="dl-horizontal" ng-dblclick="selectJargon(j)" ng-repeat="j in jargon">
-    <dt>{{j.word}}, <em>{{j.type}}</em>.</dt>
-    <dd>
-       {{j.defn}}
-       <p>
-          <em>{{j.usage}}</em>
-       </p>
-    </dd>
-  </dl>
-</div>
-
 <div class="jargon">
   <div class="container jargonCard" ng-click="selectJargon(j)" ng-dblclick="deleteJargon(j)" ng-repeat="j in jargon">
     <div class="head">

@@ -2,7 +2,7 @@
 <div class="jargon center-block">
   <div class="container jargon">
     <div class="head">
-      <span class="word">{{jargon.word}}</span><span class="pronounciation"> [b'oil 'the o'sean]</span><span class="comma">,</span><em> {{jargon.type}}.</em>
+      <span class="word">{{jargon.word}}</span><span class="comma">,</span><em> {{jargon.type}}.</em>
     </div>
     <div class="body">
       <p class="definition">
@@ -12,13 +12,11 @@
         <span class="title">Usage</span><br />
         <span class="example">{{jargon.usage}}</span>
       </div>
-      <div class="usage">
-        <!-- TODO: Ugly, fix this up later -->
-        <span class="title">Score</span><br />
-        <i class="fa fa-arrow-up" ng-click="addScore(jargon)"></i>
-        <i class="fa fa-arrow-down" ng-click="subScore(jargon)"></i>
-        <span class="example">{{jargon.meta.votes}}</span>
-      </div>
+    </div>
+    <div class="score">
+      <span class="value">{{jargon.meta.votes}}</span>
+      <button type="button" class="btn btn-success" ng-click="addScore(jargon)"><i class="fa fa-thumbs-up"></i> Good</button>
+      <button type="button" class="btn btn-danger" ng-click="subScore(jargon)"><i class="fa fa-thumbs-down"></i> Bad</button>
     </div>
   </div>
 </div>

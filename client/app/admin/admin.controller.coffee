@@ -19,11 +19,15 @@ angular.module 'consultantSpeakApp'
     $scope.selectedJargon = j
     $scope.hasSelection = true
 
+  $scope.changeActive = (j) ->
+    $http.put '/api/jargon/' + j._id,
+      active: j.active
+
   $scope.addJargon = ->
     return if !$scope.selectedJargon or $scope.selectedJargon.word is ''
 
     if $scope.hasSelection
-      console.log($scope.selectedJargon)
+      # console.log($scope.selectedJargon)
       # Updating existing row
       $http.put '/api/jargon/' + $scope.selectedJargon._id,
         word: $scope.selectedJargon.word

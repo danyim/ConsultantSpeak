@@ -7,6 +7,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 /**
  * App-wide Styles
  */
+body {
+  background: url(../assets/images/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
 
  .browsehappy {
   margin: 0.2em 0;
@@ -17,7 +21,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 .jargon {
   font-weight: 300;
-  margin-top: 50px;
+  margin-top: 2.0em;
   text-align: left;
   position: relative;
   padding: 30px 15px;
@@ -29,62 +33,84 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
   }
   .head {
     font-family: 'Merriweather', serif;
-    font-size: 40px;
+    font-size: 3.2em;
     font-weight: 300;
     line-height: 1;
     letter-spacing: -1px;
     .word {
       font-weight: 900;
     }
-    .comma {
-      font-size: 30px;
-    }
     em {
-      font-size: 35px;
+      font-size: 0.8em;
       font-weight: 700;
     }
   }
   .body {
     font-family: 'Cardo', serif;
-    font-size: 20px;
+    font-size: 1.8em;
     .definition {
       hyphens: auto;
       margin: 18px 0 25px;
     }
     .usage {
       .title {
-        font-family: 'Merriweather', serif;
-        font-weight: 300;
-        text-transform: uppercase;
+        font-family: 'News Cycle', serif;
         font-weight: bold;
-        font-size: 17px;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+        font-size: 0.8em;
       }
       .example {
-        font-style: italic;
-        font-size: 20px;
+        font-family: 'Cardo', serif;
+        // font-style: italic;
+        font-size: 0.8em;
         strong {
           font-weight: bold;
         }
       }
     }
   }
+  hr {
+    height: 5px;
+    border: none;
+    color: #000;
+  }
   .score {
-    margin-top: 40px;
+    cursor: pointer;
     .value {
-      font-size: 25px;
+      font-family: 'News Cycle', serif;
+      font-size: 1.2em;
       font-weight: bold;
+    }
+    .vote-up, .vote-down {
+      font-size: 1.2em;
+      color: #000;
+    }
+    .vote-up {
+      &:hover {
+        color: #34613F;
+        transition: .4s;
+      }
+    }
+    .vote-down {
+      &:hover {
+        color: #992E2E;
+        transition: .4s;
+      }
     }
   }
 }
 
 .footer {
-  font-style: italic;
+  font-family: 'News Cycle', serif;
+  // font-style: italic;
   text-align: center;
+  text-transform: uppercase;
   padding: 30px 0;
   margin-top: 75px;
-  color: #aaa;
+  color: #000;
   a {
-    color: #666;
+    color: #444;
   }
 }
 

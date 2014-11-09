@@ -20,14 +20,18 @@ angular.module 'consultantSpeakApp'
       $scope.jargon = filteredJargonList[rand]
 
   $scope.addScore = (jargon) ->
+    $scope.hasVoted = true;
     $http.put '/api/jargon/' + jargon._id,
         meta:
           votes: ++jargon.meta.votes
 
   $scope.subScore = (jargon) ->
+    $scope.hasVoted = true;
     $http.put '/api/jargon/' + jargon._id,
         meta:
           votes: --jargon.meta.votes
 
   $scope.$on '$destroy', ->
     socket.unsyncUpdates 'jargon'
+
+  $scope.hasVoted = false;

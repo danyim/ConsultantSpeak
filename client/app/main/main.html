@@ -15,9 +15,9 @@
     </div>
     <hr />
     <div class="score">
-      <span class="value">{{jargon.meta.votes}}</span>
-      <i class="fa fa-plus-square-o vote-up" ng-click="addScore(jargon)"></i>
-      <i class="fa fa-minus-square-o vote-down" ng-click="subScore(jargon)"></i>
+      <span class="value" title="Votes">{{jargon.meta.votes}}</span>
+      <i class="fa fa-plus-square-o vote-up" ng-click="addScore(jargon)" ng-show="!hasVoted"></i>
+      <i class="fa fa-minus-square-o vote-down" ng-click="subScore(jargon)" ng-show="!hasVoted"></i>
     </div>
   </div>
 </div>

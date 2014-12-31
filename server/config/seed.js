@@ -73,6 +73,27 @@ Jargon.find({}).remove(function() {
     active: true
   },
   {
+    word : 'touch base',
+    type : 'v',
+    defn : 'To get in contact with',
+    usage : '',
+    active: true
+  },
+  {
+    word : 'deep dive',
+    type : 'v',
+    defn : 'To research a topic deeply',
+    usage : 'We should do a deep dive on this technology before the presentation.',
+    active: true
+  },
+  {
+    word : 'DSL',
+    type : 'n',
+    defn : 'Domain Specific Language. Not to be confused with DSL (direct subscriber line) as in DSL modem',
+    usage : 'The documentation is hard to because it is entrenched with DSL',
+    active: true
+  },
+  {
     word : 'sample',
     type : 'n',
     defn : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis ligula vitae mi iaculis, lacinia aliquam ex vehicula. Donec in diam mattis, viverra tellus quis, pulvinar est.',

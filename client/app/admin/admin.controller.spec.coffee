@@ -23,6 +23,6 @@ describe 'Controller: AdminCtrl', ->
     AdminCtrl = $controller 'AdminCtrl',
       $scope: scope
 
-  it 'should attach a list of things to the scope', ->
-    $httpBackend.flush()
-    expect(scope.awesomeThings.length).toBe 4
+  # it 'should attach a list of things to the scope', ->
+  #   $httpBackend.flush()
+  #   expect(scope.awesomeThings.length).toBe 4

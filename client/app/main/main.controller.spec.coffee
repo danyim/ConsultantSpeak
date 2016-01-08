@@ -13,11 +13,11 @@ describe 'Controller: MainCtrl', ->
   # Initialize the controller and a mock scope
   beforeEach inject (_$httpBackend_, $controller, $rootScope) ->
     $httpBackend = _$httpBackend_
-    $httpBackend.expectGET('/api/things').respond [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-      'Express'
+    $httpBackend.expectGET('/api/jargon').respond [
+      word: 'Some word'
+      meta:
+        votes: 4
+      active: true
     ]
     scope = $rootScope.$new()
     MainCtrl = $controller 'MainCtrl',
@@ -25,4 +25,4 @@ describe 'Controller: MainCtrl', ->
 
   it 'should attach a list of things to the scope', ->
     $httpBackend.flush()
-    expect(scope.awesomeThings.length).toBe 4
+    expect(scope.jargonList.length).toBe 1

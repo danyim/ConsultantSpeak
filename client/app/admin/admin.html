@@ -1,4 +1,9 @@
 <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Admin</h1>
+    </div>
+  </div>
   <!-- <div class="row">
     <div class="col-lg-12">
     <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6">
@@ -17,92 +22,113 @@
       </ul>
     </div>!
   </div> -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Add new consulting jargon</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <form class="form" role="form">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Word or phrase" ng-model="selectedJargon.word">
+                </div>
+                <div class="form-group">
+                  <select class="form-control" placeholder="Word type (v, n, adj, adv)" ng-model="selectedJargon.type">
+                    <option value="v" selected="selected">verb (v.)</option>
+                    <option value="n">noun (n.)</option>
+                    <option value="adj">adjective (adj.)</option>
+                    <option value="adv">adverb (adv.)</option>>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" rows="3" placeholder="Definition" ng-model="selectedJargon.defn">></textarea>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Usage example" ng-model="selectedJargon.usage">
+                </div>
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" ng-model="selectedJargon.active"> Active
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary" ng-show="!hasSelection" ng-click="addJargon()">Add Jargon</button>
+                  <button type="submit" class="btn btn-info" ng-show="hasSelection" ng-click="addJargon()">Update Jargon</button>
+                  <button type="submit" class="btn btn-warning" ng-show="hasSelection" ng-click="newJargon()">Cancel</button>
+                  <button type="submit" class="btn btn-danger" ng-show="hasSelection" ng-click="deleteJargon(selectedJargon)">Delete</button>
+                </div>
+              </form>
+            </div>
+          </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">Add new consulting jargon</h3>
-    </div>
-    <div class="panel-body">
-      <form class="form" role="form">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Word or phrase" ng-model="selectedJargon.word">
-        </div>
-        <div class="form-group">
-          <select class="form-control" placeholder="Word type (v, n, adj, adv)" ng-model="selectedJargon.type">
-            <option value="v" selected="selected">verb</option>
-            <option value="n">noun</option>
-            <option value="adj">adjective</option>
-            <option value="adv">adverb</option>>
-          </select>
-        </div>
-        <div class="form-group">
-          <textarea class="form-control" rows="3" placeholder="Definition" ng-model="selectedJargon.defn">></textarea>
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Usage example" ng-model="selectedJargon.usage">
-        </div>
-        <div class="form-group">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" ng-model="selectedJargon.active"> Active
-            </label>
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table table-hover">
+                <thead>
+                  <!-- <th>Active</th> -->
+                  <th>Score</th>
+                  <th>Word</th>
+                  <th>Description</th>
+                  <th>Action</th>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="j in jargon">
+                    <!-- <td>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" ng-model="j.active" ng-change="changeActive(j)">
+                        </label>
+                      </div>
+                    </td> -->
+                    <td>
+                      {{j.meta.votes}}
+                    </td>
+                    <td>{{j.word}}, <em>{{j.type}}</em>.</td>
+                    <td>
+                       {{j.defn}}
+                       <p>
+                          <em>{{j.usage}}</em>
+                       </p>
+                    </td>
+                    <td>
+                      <button class="btn btn-primary" ng-click="selectJargon(j)">Edit</button>
+                      <button class="btn btn-warning" ng-show="j.active" ng-click="changeActive(j)">Set Inactive</button>
+                      <button class="btn btn-success" ng-hide="j.active" ng-click="changeActive(j)">Set Active</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary" ng-show="!hasSelection" ng-click="addJargon()">Add Jargon</button>
-          <button type="submit" class="btn btn-info" ng-show="hasSelection" ng-click="addJargon()">Update Jargon</button>
-          <button type="submit" class="btn btn-warning" ng-show="hasSelection" ng-click="newJargon()">Cancel</button>
-          <button type="submit" class="btn btn-danger" ng-show="hasSelection" ng-click="deleteJargon(selectedJargon)">Delete</button>
-        </div>
-      </form>
+      </div>
     </div>
-
-
-    <table class="table table-hover">
-      <thead>
-        <th>Active</th>
-        <th>Score</th>
-        <th>Word</th>
-        <th>Description</th>
-      </thead>
-      <tbody>
-        <tr ng-click="selectJargon(j)" ng-class="(j.active ? 'success' : 'warning')" ng-repeat="j in jargon">
-          <td>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" ng-model="j.active" ng-change="changeActive(j)">
-              </label>
-            </div>
-          </td>
-          <td>
-            {{j.meta.votes}}
-          </td>
-          <td>{{j.word}}, <em>{{j.type}}</em>.</td>
-          <td>
-             {{j.defn}}
-             <p>
-                <em>{{j.usage}}</em>
-             </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
-</div>
 
-<div class="jargon">
-  <div class="container jargonCard" ng-click="selectJargon(j)" ng-dblclick="deleteJargon(j)" ng-repeat="j in jargon">
-    <div class="head">
-      <span class="word">{{j.word}}</span><span class="comma">,</span><em> {{j.type}}.</em>
-    </div>
-    <div class="body">
-      <p class="definition">
-        {{j.defn}}
-      </p>
-      <div class="usage">
-        <span class="title">Usage</span><br />
-        <span class="example">{{j.usage}}</span>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jargon">
+        <div class="container jargonCard" ng-click="selectJargon(j)" ng-dblclick="deleteJargon(j)" ng-repeat="j in jargon">
+          <div class="head">
+            <span class="word">{{j.word}}</span><span class="comma">,</span><em> {{j.type}}.</em>
+          </div>
+          <div class="body">
+            <p class="definition">
+              {{j.defn}}
+            </p>
+            <div class="usage">
+              <span class="title">Usage</span><br />
+              <span class="example">{{j.usage}}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+

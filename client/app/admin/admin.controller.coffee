@@ -21,7 +21,7 @@ angular.module 'consultantSpeakApp'
 
   $scope.changeActive = (j) ->
     $http.put '/api/jargon/' + j._id,
-      active: j.active
+      active: !j.active
 
   $scope.addJargon = ->
     return if !$scope.selectedJargon or $scope.selectedJargon.word is ''

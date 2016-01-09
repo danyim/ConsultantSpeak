@@ -1,5 +1,4 @@
-
-<div class="jargon center-block">
+<div class="jargon">
   <div class="container">
     <div class="head">
       <span class="word">{{jargon.word}}</span><span class="comma">,</span><em> {{jargon.type}}.</em>
@@ -15,9 +14,11 @@
     </div>
     <hr />
     <div class="score">
+      <i class="fa fa-minus-square-o vote-down" ng-click="subScore(jargon)" ng-show="!hasVoted"></i>
       <span class="value" title="Votes">{{jargon.meta.votes}}</span>
       <i class="fa fa-plus-square-o vote-up" ng-click="addScore(jargon)" ng-show="!hasVoted"></i>
-      <i class="fa fa-minus-square-o vote-down" ng-click="subScore(jargon)" ng-show="!hasVoted"></i>
+      &nbsp;&middot;&nbsp;
+      <a href="#" ng-click="random()">Random</a>
     </div>
   </div>
 </div>

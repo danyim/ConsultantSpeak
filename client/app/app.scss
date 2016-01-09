@@ -10,6 +10,14 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 body {
   background: url(../assets/images/bg.jpg) no-repeat center center fixed;
   background-size: cover;
+  color: #000;
+  a {
+    color: #444;
+  }
+  a:hover {
+    color: #222;
+    text-decoration: none;
+  }
 }
 
  .browsehappy {
@@ -75,26 +83,29 @@ body {
     color: #000;
   }
   .score {
-    cursor: pointer;
-    .value {
-      font-family: 'Unica One', serif;
-      font-size: 1.2em;
-      font-weight: bold;
+    font-family: 'Unica One', serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    a {
+      color: inherit;
     }
     .vote-up, .vote-down {
-      font-size: 1.2em;
+      font-size: 0.9em;
       color: #000;
+      cursor: pointer;
     }
     .vote-up {
       &:hover {
         color: #34613F;
-        transition: .4s;
+        transition: .3s;
       }
     }
     .vote-down {
       &:hover {
         color: #992E2E;
-        transition: .4s;
+        transition: .3s;
       }
     }
   }
@@ -102,15 +113,10 @@ body {
 
 .footer {
   font-family: 'Unica One', serif;
-  // font-style: italic;
   text-align: center;
   text-transform: uppercase;
   padding: 30px 0;
   margin-top: 75px;
-  color: #000;
-  a {
-    color: #444;
-  }
 }
 
 

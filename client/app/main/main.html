@@ -14,11 +14,11 @@
     </div>
     <hr />
     <div class="score">
-      <i class="fa fa-minus-square-o vote-down" ng-click="subScore(jargon)" ng-show="!hasVoted"></i>
+      <i class="fa fa-minus-square-o vote-down" ng-click="subScore(jargon)" ng-show="votesLeft > 0"></i>
       <span class="value" title="Votes">{{jargon.meta.votes}}</span>
-      <i class="fa fa-plus-square-o vote-up" ng-click="addScore(jargon)" ng-show="!hasVoted"></i>
+      <i class="fa fa-plus-square-o vote-up" ng-click="addScore(jargon)" ng-show="votesLeft > 0"></i>
       &nbsp;&middot;&nbsp;
-      <a href="#" ng-click="random()">Random</a>
+      <a href="#" ng-click="randomize()">Random</a>
     </div>
   </div>
 </div>

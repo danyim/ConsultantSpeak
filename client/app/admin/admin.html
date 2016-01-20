@@ -52,24 +52,13 @@
             <div class="col-md-12">
               <table class="table table-hover">
                 <thead>
-                  <!-- <th>Active</th> -->
-                  <th>Score</th>
                   <th>Word</th>
                   <th>Description</th>
+                  <th>Score</th>
                   <th>Action</th>
                 </thead>
                 <tbody>
                   <tr ng-repeat="j in jargon">
-                    <!-- <td>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox" ng-model="j.active" ng-change="changeActive(j)">
-                        </label>
-                      </div>
-                    </td> -->
-                    <td>
-                      {{j.meta.votes}}
-                    </td>
                     <td>{{j.word}}, <em>{{j.type}}</em>.</td>
                     <td>
                        {{j.defn}}
@@ -78,9 +67,12 @@
                        </p>
                     </td>
                     <td>
-                      <button class="btn btn-primary" ng-click="selectJargon(j)">Edit</button>
-                      <button class="btn btn-warning" ng-show="j.active" ng-click="changeActive(j)">Set Inactive</button>
-                      <button class="btn btn-success" ng-hide="j.active" ng-click="changeActive(j)">Set Active</button>
+                      {{j.meta.votes}}
+                    </td>
+                    <td>
+                      <a class="text-primary" ng-click="selectJargon(j)">Edit</a>
+                      <a class="text-warning" ng-show="j.active" ng-click="changeActive(j)">Set Inactive</a>
+                      <a class="text-success" ng-hide="j.active" ng-click="changeActive(j)">Set Active</a>
                     </td>
                   </tr>
                 </tbody>

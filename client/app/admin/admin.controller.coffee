@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module 'consultantSpeakApp'
-.controller 'AdminCtrl', ($scope, $http, socket) ->
+.controller 'AdminCtrl', ($scope, $http, socket, $window) ->
   $scope.jargon = []
   $scope.selectedJargon = null
   $scope.hasSelection = false
@@ -15,9 +15,10 @@ angular.module 'consultantSpeakApp'
     $scope.hasSelection = false
 
   $scope.selectJargon = (j) ->
-    console.log(j)
+    # console.log(j)
     $scope.selectedJargon = j
     $scope.hasSelection = true
+    $window.scrollTo 0,0
 
   $scope.changeActive = (j) ->
     $http.put '/api/jargon/' + j._id,
@@ -47,7 +48,7 @@ angular.module 'consultantSpeakApp'
     $scope.newJargon()
 
   $scope.deleteJargon = (jargon) ->
-    if confirm("Are you sure you want to delete " + jargon.word + "?")
+    if confirm("Are you sure you want to delete the entry for \"" + jargon.word + "\"?")
       $http.delete '/api/jargon/' + jargon._id
       if $scope.selectedJargon = jargon
         $scope.newJargon()

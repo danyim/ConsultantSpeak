@@ -5,8 +5,8 @@ This is a fun little project that demonstrates how `yo angular-fullstack` and a 
 
 
 ## Live URL
-**OpenShift:** [http://cspeak-danyim.rhcloud.com/](http://cspeak-danyim.rhcloud.com/)
-**Personal:** [http://jargon.yimd.net/](http://jargon.yimd.net/)
+- **OpenShift:** [http://cspeak-danyim.rhcloud.com/](http://cspeak-danyim.rhcloud.com/)
+- **Personal:** [http://jargon.yimd.net/](http://jargon.yimd.net/)
 
 [![Build Status](https://travis-ci.org/danyim/ConsultantSpeak.svg?branch=master)](https://travis-ci.org/danyim/ConsultantSpeak)
 
@@ -17,8 +17,8 @@ This is a fun little project that demonstrates how `yo angular-fullstack` and a 
 
 ## Deployment
 - Install the OpenShift gem `gem install rhc` and run `rhc setup` with your account details
-- Run `yo angular-fullstack:openshift` to create and deploy the application to your OpenShift account
-- After changes, run `grunt build` then `grunt buildcontrol:openshift` to deploy
+- Run `yo angular-fullstack:openshift APP_NAME_HERE` to create and deploy the application to your OpenShift account (take a few minutes)
+- After making changes, run `grunt build` then `grunt buildcontrol:openshift` to deploy
 
 ## Stack
 - MEAN (MongoDB, ExpressJS, Angular, NodeJS), SASS, grunt, yeoman

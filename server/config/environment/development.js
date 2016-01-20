@@ -1,13 +1,13 @@
 'use strict';
 
+var config = require('../local.env.js');
+
 // Development specific configuration
 // ==================================
 module.exports = {
   // MongoDB connection options
   mongo: {
-    //uri: MONGO_DOMAIN//'mongodb://localhost/consultant-speak-dev'
-    uri: ''
+    uri: config.MONGO_DOMAIN
   },
-
-  seedDB: true
+  seedDB: false
 };
